@@ -47,5 +47,4 @@ prosensia.db
 Thumbs.db
 
 # Project Specific
-eta_model.pkl
 logs/
