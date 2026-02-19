@@ -1,0 +1,334 @@
+.page {
+  padding-bottom: 24px;
+}
+
+.stationBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  background: linear-gradient(135deg, var(--surface) 0%, var(--surface-2) 100%);
+  border-radius: var(--radius);
+  margin-bottom: 24px;
+  border: 1px solid var(--surface-2);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+}
+
+.stationBar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  opacity: 0.5;
+}
+
+.stationLabel {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.stationValue {
+  font-weight: 700;
+  color: var(--accent);
+  font-size: 1rem;
+  text-shadow: 0 0 10px var(--accent-glow);
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  background: linear-gradient(135deg, var(--text) 0%, var(--text-muted) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+  font-weight: 500;
+}
+
+.menuList {
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+
+.menuItem {
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--surface-2);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+}
+
+.menuItem:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--accent-glow);
+}
+
+.menuBtn {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 0;
+  text-align: left;
+  color: var(--text);
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.menuBtn::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--accent);
+  transform: scaleY(0);
+  transition: transform 0.3s ease;
+  z-index: 2;
+}
+
+.menuBtn:active::before,
+.menuItem:hover .menuBtn::before {
+  transform: scaleY(1);
+}
+
+.menuBtn:active {
+  background: var(--surface-2);
+}
+
+.itemImageWrapper {
+  width: 100%;
+  height: 160px;
+  overflow: hidden;
+  position: relative;
+  background: var(--surface-2);
+}
+
+.itemImageWrapper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.3) 100%);
+  pointer-events: none;
+}
+
+.itemImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.menuItem:hover .itemImage {
+  transform: scale(1.1);
+}
+
+.itemInfo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  background: var(--surface);
+}
+
+.itemName {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.itemPrice {
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 1.05rem;
+  text-shadow: 0 0 8px var(--accent-glow);
+}
+
+.cartSection {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--surface-2);
+  position: sticky;
+  bottom: 0;
+  background: var(--bg);
+  padding-bottom: 8px;
+}
+
+.cartTitle {
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+
+.cartEmpty {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  padding: 12px 0;
+}
+
+.cartList {
+  list-style: none;
+  margin-bottom: 12px;
+}
+
+.cartItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  background: linear-gradient(135deg, var(--surface) 0%, var(--surface-2) 100%);
+  border-radius: var(--radius-sm);
+  margin-bottom: 8px;
+  border: 1px solid var(--surface-2);
+  transition: all 0.2s ease;
+}
+
+.cartItem:hover {
+  border-color: var(--accent-glow);
+  transform: translateX(4px);
+}
+
+.cartImage {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--surface-2);
+  flex-shrink: 0;
+}
+
+.cartItemName {
+  flex: 1;
+  font-weight: 500;
+}
+
+.cartPrice {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.removeBtn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--surface-2);
+  color: var(--text-muted);
+  font-size: 1.3rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.removeBtn:hover {
+  background: var(--surface-3);
+  transform: scale(1.1);
+}
+
+.removeBtn:active {
+  background: var(--danger);
+  color: white;
+  transform: scale(0.95);
+}
+
+.urgentLabel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+  cursor: pointer;
+}
+
+.urgentLabel input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--accent);
+}
+
+.cartFooter {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.orderError {
+  color: var(--danger);
+  font-size: 0.9rem;
+  margin-bottom: 4px;
+}
+
+.cartFooter strong {
+  font-size: 1.1rem;
+}
+
+.placeBtn {
+  width: 100%;
+  padding: 16px 24px;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dim) 100%);
+  color: #000;
+  font-weight: 700;
+  font-size: 1.05rem;
+  border-radius: var(--radius);
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-accent);
+  position: relative;
+  overflow: hidden;
+}
+
+.placeBtn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.placeBtn:hover::before {
+  left: 100%;
+}
+
+.placeBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(34, 197, 94, 0.4);
+}
+
+.placeBtn:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
+}
+
+.placeBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+@media (min-width: 768px) {
+  .menuList {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
